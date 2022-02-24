@@ -1,14 +1,13 @@
+import javax.management.Descriptor;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class shipmentProducts {
-    private Object[] array;
-    private String description;
+public class shipmentProducts extends product{
+    public Object[] array;
+    public String description;
 
-    public shipmentProducts(String description, Object ... v)throws NullPointerException, IllegalArgumentException{
-        if (description == "")
-            throw new NullPointerException("Поле описания не может быть пустым");
-        this.description = description;
+    public shipmentProducts(String Name,String Description, Object ... v)throws NullPointerException, IllegalArgumentException{
+        super(Name, Description);
         for(int i =0; i<v.length;i++){
             if(v[i] ==null)
                 throw new NullPointerException("Пустое значение товара №" + i);
@@ -43,13 +42,14 @@ public class shipmentProducts {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         shipmentProducts that = (shipmentProducts) o;
         return Arrays.equals(array, that.array) && Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(description);
+        int result = Objects.hash(super.hashCode(), description);
         result = 31 * result + Arrays.hashCode(array);
         return result;
     }
@@ -57,7 +57,9 @@ public class shipmentProducts {
     @Override
     public String toString() {
         return "shipmentProducts{" +
-                "array=" + Arrays.toString(array) +
+                "Name='" + Name + '\'' +
+                ", Description='" + Description + '\'' +
+                ", array=" + Arrays.toString(array) +
                 ", description='" + description + '\'' +
                 '}';
     }

@@ -19,21 +19,22 @@ public class pieceProduct extends product{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         pieceProduct that = (pieceProduct) o;
-        return Double.compare(that.Weight, Weight) == 0 && Objects.equals(Name, that.Name) && Objects.equals(Description, that.Description);
+        return Double.compare(that.Weight, Weight) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Name, Description, Weight);
+        return Objects.hash(super.hashCode(), Weight);
     }
 
     @Override
     public String toString() {
         return "pieceProduct{" +
-                "Name ='" + Name + '\'' +
-                ", Description ='" + Description + '\'' +
-                ", Weight =" + Weight +
+                "Weight=" + Weight +
+                ", Name='" + Name + '\'' +
+                ", Description='" + Description + '\'' +
                 '}';
     }
 }

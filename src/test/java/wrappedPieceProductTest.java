@@ -11,10 +11,10 @@ public class wrappedPieceProductTest {
         pieceProduct Pproduct1 = new pieceProduct("egg", "white egg", 0.065);
         pieceProduct Pproduct2 = new pieceProduct("egg", "white egg", -0.065);
         pieceProduct Pproduct3 = new pieceProduct("egg", "white egg", 0.066);
-        wrappedPieceProduct wrappedPieceProduct1 = new wrappedPieceProduct (wrap1, Pproduct1, 3);
-        wrappedPieceProduct wrappedPieceProduct2 = new wrappedPieceProduct (wrap3, Pproduct1, 3);
-        wrappedPieceProduct wrappedPieceProduct3 = new wrappedPieceProduct (wrap1, Pproduct3, 3);
-        wrappedPieceProduct wrappedPieceProduct4 = new wrappedPieceProduct (wrap2, Pproduct2, 3);
+        wrappedPieceProduct wrappedPieceProduct1 = new wrappedPieceProduct ("Name","Description",wrap1, Pproduct1, 3);
+        wrappedPieceProduct wrappedPieceProduct2 = new wrappedPieceProduct ("Name","Description",wrap3, Pproduct1, 3);
+        wrappedPieceProduct wrappedPieceProduct3 = new wrappedPieceProduct ("Name","Description",wrap1, Pproduct3, 3);
+        wrappedPieceProduct wrappedPieceProduct4 = new wrappedPieceProduct ("Name","Description",wrap2, Pproduct2, 3);
         assertTrue(wrappedPieceProduct1.equals(wrappedPieceProduct2));
         assertFalse(wrappedPieceProduct1.equals(wrappedPieceProduct3));
 

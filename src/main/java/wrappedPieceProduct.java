@@ -1,11 +1,12 @@
 import java.util.Objects;
 
-public class wrappedPieceProduct {
+public class wrappedPieceProduct extends product {
     private productWrap wrap;
     private pieceProduct product;
     private int quantity;
 
-    public wrappedPieceProduct(productWrap wrap, pieceProduct product, int quantity) throws IllegalArgumentException, NullPointerException{
+    public wrappedPieceProduct(String Name, String Description, productWrap wrap, pieceProduct product, int quantity) throws IllegalArgumentException, NullPointerException{
+        super(Name, Description);
         if(wrap == null || product == null)
             throw new NullPointerException("Значения товара и упаковки не могут быть пустыми!");
         this.wrap = wrap;
@@ -30,21 +31,24 @@ public class wrappedPieceProduct {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         wrappedPieceProduct that = (wrappedPieceProduct) o;
         return quantity == that.quantity && Objects.equals(wrap, that.wrap) && Objects.equals(product, that.product);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(wrap, product, quantity);
+        return Objects.hash(super.hashCode(), wrap, product, quantity);
     }
 
     @Override
     public String toString() {
         return "wrappedPieceProduct{" +
-                "wrap = " + wrap +
-                ", product = " + product +
-                ", quantity = " + quantity +
+                "Name='" + Name + '\'' +
+                ", Description='" + Description + '\'' +
+                ", wrap=" + wrap +
+                ", product=" + product +
+                ", quantity=" + quantity +
                 '}';
     }
 }

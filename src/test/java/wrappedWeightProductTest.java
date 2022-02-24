@@ -12,11 +12,11 @@ public class wrappedWeightProductTest {
         weightProduct Wproduct2 = new weightProduct("banana", "it is banana");
         weightProduct Wproduct3 = new weightProduct("banana", "it is banananananana");
         wrappedWeightProduct wrappedWeightProduct1;
-        wrappedWeightProduct1 = new wrappedWeightProduct(wrap1, Wproduct1, 2.0);
-        wrappedWeightProduct wrappedWeightProduct2 = new wrappedWeightProduct(wrap1, Wproduct1, 2.0);
-        wrappedWeightProduct wrappedWeightProduct3 = new wrappedWeightProduct(wrap3, Wproduct1, 2.0);
-        wrappedWeightProduct wrappedWeightProduct4 = new wrappedWeightProduct(wrap2, Wproduct3, 2.0);
-        wrappedWeightProduct wrappedWeightProduct5 = new wrappedWeightProduct(wrap1, Wproduct1, 0.0);
+        wrappedWeightProduct1 = new wrappedWeightProduct("Name","Description",wrap1, Wproduct1, 2.0);
+        wrappedWeightProduct wrappedWeightProduct2 = new wrappedWeightProduct("Name","Description",wrap1, Wproduct1, 2.0);
+        wrappedWeightProduct wrappedWeightProduct3 = new wrappedWeightProduct("Name","Description",wrap3, Wproduct1, 2.0);
+        wrappedWeightProduct wrappedWeightProduct4 = new wrappedWeightProduct("Name","Description",wrap2, Wproduct3, 2.0);
+        wrappedWeightProduct wrappedWeightProduct5 = new wrappedWeightProduct("Name","Description",wrap1, Wproduct1, 0.0);
         assertTrue(wrappedWeightProduct1.equals(wrappedWeightProduct3));
         assertFalse(wrappedWeightProduct1.equals(wrappedWeightProduct4));
 

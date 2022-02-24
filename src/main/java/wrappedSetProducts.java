@@ -1,10 +1,11 @@
 import java.util.Arrays;
 import java.util.Objects;
 
-public class wrappedSetProducts {
+public class wrappedSetProducts extends product{
     productWrap wrap;
     Object[] array;
-    public wrappedSetProducts(productWrap wrap, Object ... v)throws NullPointerException, IllegalArgumentException{
+    public wrappedSetProducts(String Name, String Description, productWrap wrap, Object ... v)throws NullPointerException, IllegalArgumentException{
+        super(Name, Description);
         if(wrap == null)
             throw new NullPointerException("Значение упаковки не может быть пустым!");
         this.wrap = wrap;
